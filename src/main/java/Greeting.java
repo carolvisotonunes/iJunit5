@@ -3,11 +3,11 @@ public class Greeting {
     private static final String HELLO = "Hello";
     private static final String WORLD = "World";
 
-    public String helloWorld() {
+    public String helloWorldNoName() {
         return HELLO + "" + WORLD;
     }
 
-    public String helloWorld(String name) {
+    public String helloWorldWithName(String name) {
         return HELLO + "" + name;
     }
 

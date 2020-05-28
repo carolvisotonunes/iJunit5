@@ -1,18 +1,21 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class GreetingTest {
+    Greeting greeting;
+    @BeforeEach
+    void setUp() {
+        greeting = new Greeting();
+        System.out.println("In Before Each...");
+    }
 
     @Test
     void helloWorld() {
-        Greeting greeting = new Greeting();
-        System.out.println(greeting.helloWorld());
+        System.out.println(greeting.helloWorldNoName());
     }
 
     @Test
     void testHelloWorld() {
-        Greeting greeting = new Greeting();
-        System.out.println(greeting.helloWorld(" Carol"));
+        System.out.println(greeting.helloWorldWithName(" Carol"));
     }
 }

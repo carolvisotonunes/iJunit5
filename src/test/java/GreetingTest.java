@@ -1,8 +1,12 @@
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 class GreetingTest {
     Greeting greeting;
+
+    @BeforeAll
+    public static void beforeClass(){
+        System.out.println("Before - I am only called once");
+    }
     @BeforeEach
     void setUp() {
         greeting = new Greeting();
@@ -17,5 +21,15 @@ class GreetingTest {
     @Test
     void testHelloWorld() {
         System.out.println(greeting.helloWorldWithName(" Carol"));
+    }
+
+    @AfterEach
+    void tearDown() {
+        System.out.printf("In After Each.......");
+    }
+
+    @AfterAll
+    static void afterAll() {
+        System.out.println("AfterAll - I only called once");
     }
 }
